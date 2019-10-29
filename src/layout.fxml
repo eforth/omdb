@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OMDBController">
+   <children>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="29.0" prefWidth="200.0" VBox.vgrow="NEVER">
+         <children>
+            <TextField fx:id="queryTxtFd" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchBtn" mnemonicParsing="false" onMouseClicked="#onSearch" text="Search" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+            <Button fx:id="resetBtn" mnemonicParsing="false" onMouseClicked="#onReset" text="Reset" />
+         </children>
+      </HBox>
+      <Label fx:id="statusLbl" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fx:id="posterImgVw" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@poster.jpg" />
+               </image>
+            </ImageView>
+            <GridPane HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="70.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <Label text="No Data" fx:id="titleData" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font></Label>
+                   <Label text="Plot" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="plotData" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+                   <Label text="Actors" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="actorsData" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+                   <Label text="Writer" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="writerData" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                   <Label text="Type" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="typeData" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                   <Label text="Genre" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="genreData" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                   <Label text="Rated" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="ratedData" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                   <Label text="Run Time" GridPane.rowIndex="7" GridPane.valignment="TOP" />
+                   <Label text="No Data" fx:id="runTimeData" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="TOP" />
+               </children>
+            </GridPane>
+         </children></HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+   </padding>
+</VBox>
