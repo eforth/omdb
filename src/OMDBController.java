@@ -51,6 +51,7 @@ public class OMDBController {
         String queryString = queryTxtFd.getText();
 
         if (TextUtils.isEmpty(queryString) || queryString.length() < 3) {
+            resetAll();
             statusLbl.setText("Search text is too small!");
             return;
         }
@@ -132,6 +133,7 @@ public class OMDBController {
             }
         };
 
+        // http://www.omdbapi.com/?apikey=b54e863&t=cars
         Future<HttpResponse<JsonNode>> request = Unirest.get(urlString)
                 .queryString("apikey", apiKey)
                 .queryString("t", query)
